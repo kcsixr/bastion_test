@@ -4,3 +4,4 @@
     name: "{{ user_name }}"
     password: "{{ user_password | password_hash('sha512') }}"
     update_password: on_create
+    password_expire_max: 0
