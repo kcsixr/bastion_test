@@ -1,0 +1,6 @@
+---
+- name: Set user password with changing at first login
+  user:
+    name: "{{ user_name }}"
+    password: "{{ user_password | password_hash('sha512') }}"
+    update_password: on_create
