@@ -5,5 +5,5 @@ Test task for engaging Bastion interny
 2. Then I define role defaults in roles/user_password/defaults/main.yml
    I use username Test as task condition and test_pass as password that I set as default password for that user.
 3. Next I create task as itself in roles/user_password/tasks/main.yml
-   User's name and password are taken from defaults with encrypting password with sha512. Condition for changing password at first login is considered in string update_password.
+   User's name and password are taken from defaults with encrypting password with sha512. Condition for changing password at first login is considered in string update_password. Added password_expire_max: 0 for instant changig password.
 4. Finally I created playbook with managed_nodes as hosts and we need to use root, so that's why string "become: yes" is added in playbook.
